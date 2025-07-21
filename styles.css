@@ -458,7 +458,13 @@ footer {
   background-color: rgba(255, 255, 255, 0.05);
   cursor: pointer;
 }
+.service__card {
+  transition: transform 0.3s ease-in-out;
+}
 
+.service__card:hover{
+  transform: translateY(-10px);
+}
 
 .project__card {
   /* display: grid; */
@@ -595,9 +601,9 @@ footer {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .project__grid {
+  /* .project__grid {
     grid-template-columns: repeat(2, 1fr);
-  }
+  } */
 
   .about__container img{
     display:block;
