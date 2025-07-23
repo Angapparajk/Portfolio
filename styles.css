@@ -476,7 +476,7 @@ footer {
 }
 
 .project__card img {
-  height: 265px;
+  min-height: 265px;
   max-width:500px;
   transition: scale 0.3s;
 }
