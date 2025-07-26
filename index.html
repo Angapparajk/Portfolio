@@ -175,12 +175,29 @@
       </div>
     </footer>
     <script>
-      const navToggle = document.getElementById("navToggle");
-      const navLinks = document.getElementById("navLinks");
+  const navToggle = document.getElementById("navToggle");
+  const navLinks = document.getElementById("navLinks");
+  const navLinkItems = navLinks.querySelectorAll("a");
 
-      navToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-      });
-    </script>
+
+  navToggle.addEventListener("click", (e) => {
+    e.stopPropagation(); 
+    navLinks.classList.toggle("active");
+  });
+
+  navLinkItems.forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    const clickedInsideNav = navLinks.contains(event.target);
+    const clickedToggle = navToggle.contains(event.target);
+    if (!clickedInsideNav && !clickedToggle) {
+      navLinks.classList.remove("active");
+    }
+  });
+</script>
   </body>
 </html>
